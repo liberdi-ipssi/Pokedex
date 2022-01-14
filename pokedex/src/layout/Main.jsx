@@ -12,13 +12,13 @@ const Main = () => (
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/list">List Of Pokemons</Link>
+                        <Link to="/list">Liste des Pokémons</Link>
                     </li>
                     <li>
-                        <Link to="/typelist">List Of Pokemons By Types</Link>
+                        <Link to="/typelist">Liste des Pokémons par Type</Link>
                     </li>
                     <li>
-                        <Link to="/favorites">Favorites</Link>
+                        <Link to="/favorites">Favoris</Link>
                     </li>
                 </ul>
             </nav>

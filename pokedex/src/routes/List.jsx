@@ -1,5 +1,12 @@
 import "styles/Main.css";
 
-const List = () => <h1>Liste de Pokémons</h1>;
+import ListContainer from "containers/List";
+
+const List = () => (
+  <>
+    <h1>Page apparts</h1>
+    <ListContainer />
+  </>
+);
 
 export default List;
