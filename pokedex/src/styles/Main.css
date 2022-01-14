@@ -15,7 +15,39 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.App-header li {
+  padding: 0 20px;
+}
+
+.App-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.App-header a:hover {
+  color: grey;
+  text-decoration: none;
+}
+
+.App-main {
+  background-color: #282c34;
+  min-height: 90vh;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
