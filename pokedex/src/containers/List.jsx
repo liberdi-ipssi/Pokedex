@@ -12,12 +12,14 @@ const ListContainer = () => {
     const fetchAPI = async () => {
         try {
           const response = await fetch(
-            "https://pokeapi.co/api/v2/pokemon/bulbasaur"
+            "https://pokeapi.co/api/v2/pokemon?limit=151"
           );
     
           const data = await response.json();
-          console.log(data);
-          setData([{ name: data.name, url: data.sprites.front_default, id: data.id }]);
+          const listPokemon = [];
+          console.log(data.results);
+          data.results.map((pokemon,index) => listPokemon.push({ name: pokemon.name, url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`+(index+1)+`.png`, id: Number(index+1) }));
+          setData(listPokemon);
         } catch (err) {
           console.error(err);
           throw err;
