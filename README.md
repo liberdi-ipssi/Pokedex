@@ -1,2 +1,2 @@
 # pokedex
-Controle React
+Controle React JS
