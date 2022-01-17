@@ -1,5 +1,13 @@
 import "styles/Main.css";
 
-const Detail = () => <h1>Détail</h1>;
+import DetailContainer from "containers/Detail";
+
+const Detail = () => (
+    <>
+      <DetailContainer />
+    </>
+  );
 
 export default Detail;
+
+
