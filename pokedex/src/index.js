@@ -19,7 +19,7 @@ ReactDOM.render(
         <Route index element={<Home />} />
         <Route path="list">
           <Route index element={<List />} />
-          <Route path="detail" element={<Detail />} />
+          <Route path=":slug" element={<Detail />} />
         </Route>
         <Route path="typelist" element={<TypeList />} />
         <Route path="favorites" element={<Favorites />} />
