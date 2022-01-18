@@ -7,7 +7,6 @@ import "styles/Main.css";
 const ListContainer = () => {
     const [isLoading, setLoading] = useState(true);
     const [hasError, setError] = useState(false);
-
     const [value, setValue] = useState("");
 
     const [allData, setAllData] = useState([]);
@@ -41,10 +40,11 @@ const ListContainer = () => {
         setSearchData(allData.filter(pokemon => pokemon.name.toLowerCase().includes(value.toLowerCase())));
 
         window.history.replaceState(value, "", "/list?search="+value);
+        
     };
     
     useEffect(() => {
-        fetchAPI();
+        fetchAPI();         
     }, []);
 
     if (isLoading) return <Loader />;

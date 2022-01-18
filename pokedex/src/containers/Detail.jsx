@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { Detail, Loader } from "components";
 
 import "styles/Main.css";
 
-const DetailContainer = (slugValue) => {
+const DetailContainer = () => {
+    const {slug} = useParams();
     const [isLoading, setLoading] = useState(true);
     const [hasError, setError] = useState(false);
 
-    const [value, setValue] = useState("bulbasaur");
+    const [value, setValue] = useState(slug);
     const [data, setData] = useState([]);
 
     const fetchAPI = async () => {
@@ -16,9 +18,7 @@ const DetailContainer = (slugValue) => {
             const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+value);
             const data = await response.json();
 
-            console.log(data.types[0].type.name);
-
-            setData({name: data.name, url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", types: data.types});
+            setData({name: data.name, url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(data.id)+".png", weight: data.weight, height: data.height, moves: data.moves, stats: data.stats, types: data.types});
             
             setLoading(false);
 
