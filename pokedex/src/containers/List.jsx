@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Filter, List, Loader } from "components";
+import { FilterName, List, Loader } from "components";
 
 import "styles/Main.css";
 
@@ -38,7 +38,7 @@ const ListContainer = () => {
 
         setValue(value);
         setSearchData(allData.filter(pokemon => pokemon.name.toLowerCase().includes(value.toLowerCase())));
-
+        console.log(searchData);
         window.history.replaceState(value, "", "/list?search="+value);
         
     };
@@ -53,7 +53,7 @@ const ListContainer = () => {
     return (
         <div className="App">
             <main className="App-main">
-                <Filter handleChange={handleChange} value={value} />
+                <FilterName handleChange={handleChange} value={value} />
                 {searchData.length === 0 ? "Pokémon non trouvé" : <List data={searchData} />}
             </main>
         </div>

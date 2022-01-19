@@ -1,8 +1,9 @@
 import Detail from "./Detail/Detail";
-import Filter from "./Filter/Filter";
+import FilterName from "./Filter/FilterName";
+import FilterType from "./Filter/FilterType";
 import Item from "./Item/Item";
 import Link from "./Link/Link";
 import List from "./List/List";
 import Loader from "./Loader/Loader";
 
-export { Detail, Filter, Item, Link, List, Loader };
+export { Detail, FilterName, FilterType, Item, Link, List, Loader };
