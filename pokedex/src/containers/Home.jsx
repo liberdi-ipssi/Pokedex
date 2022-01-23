@@ -25,9 +25,11 @@ const HomeContainer = () => {
         
         emailjs.sendForm(serviceId, templateId, form.current, userId)
         .then(res => {
-            console.log(`L'email a bien été envoyé`)
+            console.log(`L'email a bien été envoyé`);
+            window.location.reload();
+
         })
-        .catch(err => console.error('Une erreur est survenu :', err))
+        .catch(err => console.error('Une erreur est survenu :', err));
     };
 
     return (

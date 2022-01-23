@@ -526,7 +526,7 @@ a {
   }
 
   &--bug {
-    background: linear-gradient(45deg, rgb(230, 255, 233) 0%, rrgb(207, 255, 197)34%, rgb(194, 255, 166) 71%, rrgb(185, 255, 138)100%);
+    background: linear-gradient(45deg, rgb(230, 255, 233) 0%, rrgb(207, 255, 197)34%, rgb(194, 255, 166) 71%, rgb(185, 255, 138) 100%);
     
     .card__type {
       background: #a1ff8a;
@@ -534,7 +534,7 @@ a {
   }
 
   &--ghost {
-    background: linear-gradient(45deg, rgb(240, 230, 255) 0%, rrgb(232, 197, 255)34%, rgb(222, 166, 255) 71%, rrgb(228, 138, 255)100%);
+    background: linear-gradient(45deg, rgb(240, 230, 255) 0%, rrgb(232, 197, 255)34%, rgb(222, 166, 255) 71%, rgb(228, 138, 255) 100%);
     
     .card__type {
       background: #ca8aff;
@@ -748,7 +748,7 @@ a {
   border-radius:5px;
   border:0;
   cursor:pointer;
-  color:black;
+  color:white;
   font-size:24px;
   padding-top:10px;
   padding-bottom:10px;
