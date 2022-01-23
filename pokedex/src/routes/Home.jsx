@@ -1,4 +1,4 @@
-import "styles/Main.css";
+import "styles/Main.scss";
 
 import HomeContainer from "containers/Home";
 

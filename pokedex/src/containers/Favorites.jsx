@@ -2,20 +2,17 @@ import { useState } from "react";
 
 import { List } from "components";
 
-import "styles/Main.css";
+import "styles/Main.scss";
 
 const FavoritesContainer = () => {
     const fav = localStorage.getItem("fav");
 
     const [searchData, setSearchData] = useState(JSON.parse(fav));
 
-    console.log(searchData);
-
-
     return (
-        <div className="App">
-            <main className="App-main">
-                {searchData.length === 0 ? "Pokémon non trouvé" : <List data={searchData} />}
+        <div className="Favorites">
+            <main className="Favorites-main">
+                {searchData.length === 0 ? "No Pokemon Found" : <List data={searchData} />}
             </main>
         </div>
   );

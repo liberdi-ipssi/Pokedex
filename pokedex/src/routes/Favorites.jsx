@@ -1,4 +1,4 @@
-import "styles/Main.css";
+import "styles/Main.scss";
 
 import FavoritesContainer from "containers/Favorites";
 

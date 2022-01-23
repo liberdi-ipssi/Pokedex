@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Link } from "components";
 
-import "styles/Main.css";
+import "styles/Main.scss";
 
 const Main = () => (
     <div className="App">
@@ -12,13 +12,13 @@ const Main = () => (
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/list">Liste des Pokémons</Link>
+                        <Link to="/list">Pokemon List</Link>
                     </li>
                     <li>
-                        <Link to="/typelist">Liste des Pokémons par Type</Link>
+                        <Link to="/typelist">Pokemon Type</Link>
                     </li>
                     <li>
-                        <Link to="/favorites">Favoris</Link>
+                        <Link to="/favorites">Favorites</Link>
                     </li>
                 </ul>
             </nav>

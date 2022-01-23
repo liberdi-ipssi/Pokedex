@@ -1,11 +1,5 @@
+import reactDom from "react-dom";
 import Select from "react-select";
-
-const customStyles = {
-    control: (provided, state) => ({
-      ...provided,
-      border: 'none',
-    }),
-};
 
 const options = [
     {value:"normal", label: "Normal"},
@@ -29,11 +23,36 @@ const options = [
     {value:"shadow", label: "Shadow"},
 ]
 
+const customStyles = {
+    option: (provided) => ({
+      ...provided,
+        color: "black",
+        padding: 20,
+        display: "block",
+        "&:hover": {
+            border: "1px solid grey",
+            borderRadius: "2%",
+            backgroundColor: "rgba(51, 51, 51, 0.18)",
+        }
+    }),
+    singleValue: (provided) => {
+        const opacity = 1;
+        const transition = 'opacity 300ms';
+    
+        return { ...provided, opacity, transition };
+    },
+    menu: () => ({
+        backgroundColor: "transparent",
+    })
+  }
+
 const FilterType = ({handleSubmit, handleChange, value}) => (
-    <form onSubmit={handleSubmit}>
-        <Select styles={customStyles} options={options} onChange={handleChange} value={value} />
-        <input type="submit" value="Envoyer" />
-    </form>
+    <div className="FilterType">
+        <form onSubmit={handleSubmit}>
+            <Select styles={customStyles} options={options} onChange={handleChange} value={value} />
+            <input className="SubmitType" type="submit" value="Send" />
+        </form>
+    </div>
   );
   
   export default FilterType;

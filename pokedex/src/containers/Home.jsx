@@ -1,7 +1,7 @@
 import { useModal } from "contexts/Modal";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
-import "styles/Main.css";
+import "styles/Main.scss";
 
 import emailjs from '@emailjs/browser';
 
@@ -9,7 +9,6 @@ import emailjs from '@emailjs/browser';
 const HomeContainer = () => {
     const { setModal } = useModal();
     const form = useRef();
-    const [msg, setMsg] = useState();
     localStorage.setItem("fav", JSON.stringify([]));
 
     const handleSubmit = (ev) => {
@@ -32,24 +31,22 @@ const HomeContainer = () => {
     };
 
     return (
-        <div className="App">
-        <header className="App-header">
+        <div className="Home">
+        <header className="Home-header">
             <label
-            className="App-link"
+            className="Home"
             onClick={() => {
-                setModal(<form ref={form} onSubmit={handleSubmit}>
-                    <label>Name</label>
-                    <input type="text" name="from_name" />
-                    <label>Email</label>
-                    <input type="email" name="reply_to" />
-                    <label>Message</label>
-                    <textarea name="message" />
-                    <input type="submit" value="Send" />
-                </form>
-                )
+                setModal(<div className="formMail">
+                    <form ref={form} onSubmit={handleSubmit}>      
+                    <input type="text" name="from_name" className="feedback-input" placeholder="Name" />   
+                    <input type="email" name="reply_to" className="feedback-input" placeholder="Email" />
+                    <textarea name="message" className="feedback-input" placeholder="Comment"></textarea>
+                    <input type="submit" value="Send"/>
+                  </form>
+                  </div>)
             }}
             >
-            Envoyer un mail
+            <button className="SubmitType">Send an email</button>
             </label>
         </header>
         </div>

@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 
 import { FilterType, List, Loader } from "components";
 
-import "styles/Main.css";
-import { createPortal } from "react-dom";
+import "styles/Main.scss";
 
 const TypeListContainer = () => {
 
@@ -105,8 +104,8 @@ const TypeListContainer = () => {
     if (hasError) return <div>Erreur au fetch</div>;
 
     return (
-        <div className="App">
-            <main className="App-main">
+        <div className="TypeList">
+            <main className="TypeList">
                 <FilterType handleSubmit={handleSubmit} handleChange={handleChange} value={value} />
                 {filterData.length === 0 ? "" : <List data={filterData} />}
             </main>

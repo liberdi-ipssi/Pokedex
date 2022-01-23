@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { Detail, Loader } from "components";
 
-import "styles/Main.css";
+import "styles/Main.scss";
 
 const DetailContainer = () => {
     const {slug} = useParams();
@@ -58,8 +58,8 @@ const DetailContainer = () => {
     if (hasError) return <div>Erreur au fetch</div>;
 
     return (
-        <div className="App">
-            <main className="App-main">
+        <div className="Detail">
+            <main className="Detail">
                 <Detail data={data} onClick={(ev)=>onClick(ev)} />
             </main>
         </div>

@@ -1,7 +1,9 @@
 const FilterName = ({ handleChange, value }) => (
     <>
-      <input onChange={handleChange} value={value} type="text" />
-      <p>{value}</p>
+      <div className="form__group field">
+        <input type="input" className="form__field" placeholder="Name" name="name" onChange={handleChange} value={value} required />
+        <label htmlFor="name" className="form__label">Name</label>
+      </div>
     </>
   );
   

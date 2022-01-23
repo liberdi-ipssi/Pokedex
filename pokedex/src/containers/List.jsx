@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { FilterName, List, Loader } from "components";
 
-import "styles/Main.css";
+import "styles/Main.scss";
 
 const ListContainer = () => {
     const [isLoading, setLoading] = useState(true);
@@ -50,10 +50,10 @@ const ListContainer = () => {
     if (hasError) return <div>Erreur au fetch</div>;
 
     return (
-        <div className="App">
-            <main className="App-main">
+        <div className="List">
+            <main className="List-main">
                 <FilterName handleChange={handleChange} value={value} />
-                {searchData.length === 0 ? "Pokémon non trouvé" : <List data={searchData} />}
+                {searchData.length === 0 ? "No Pokemon Found" : <List data={searchData} />}
             </main>
         </div>
   );
