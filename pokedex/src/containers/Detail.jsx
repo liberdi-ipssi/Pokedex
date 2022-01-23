@@ -13,9 +13,6 @@ const DetailContainer = () => {
     const [value, setValue] = useState(slug);
     const [data, setData] = useState([]);
 
-    //const favorites = JSON.parse(localStorage.getItem("favorites"));
-    //if (favorites === null) localStorage.setItem("favorites", []);
-
     const fetchAPI = async () => {
         try {
             const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+value);
@@ -34,12 +31,23 @@ const DetailContainer = () => {
         }
     };
     
-    const onClick = () => {
-        
-        //console.log(favorites);
-        //favorites.push({name : data.name, url: data.url, id: data.id});
-        //localStorage.setItem("favorites", JSON.stringify(favorites));
-        
+    const onClick = (ev) => {
+        ev.preventDefault();
+
+        if (localStorage.getItem("fav").length !== 0) {
+            const dataFav = JSON.parse(localStorage.getItem("fav"));
+
+            if (dataFav.filter((pokemon) => pokemon.name == data.name).length !== 0) {
+                const removeFav = dataFav.filter((pokemon) => pokemon.name !== data.name);
+                localStorage.setItem("fav", JSON.stringify(removeFav));
+            }
+            else {
+                dataFav.push({name: data.name, url: data.url, id: data.id});
+                localStorage.setItem("fav", JSON.stringify(dataFav));
+            }
+        }
+        else 
+            localStorage.setItem("fav", JSON.stringify([{name: data.name, url: data.url, id: data.id}]));
     };
 
     useEffect(() => {
@@ -52,7 +60,7 @@ const DetailContainer = () => {
     return (
         <div className="App">
             <main className="App-main">
-                <Detail data={data} onClick={onClick} />
+                <Detail data={data} onClick={(ev)=>onClick(ev)} />
             </main>
         </div>
   );

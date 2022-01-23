@@ -5,12 +5,9 @@ import { List } from "components";
 import "styles/Main.css";
 
 const FavoritesContainer = () => {
-    const favoriteList = localStorage.getItem("favorites");
+    const fav = localStorage.getItem("fav");
 
-    const [searchData, setSearchData] = useState([JSON.parse(favoriteList)]);
-
-    console.log(searchData);
-
+    const [searchData, setSearchData] = useState(JSON.parse(fav));
 
     return (
         <div className="App">

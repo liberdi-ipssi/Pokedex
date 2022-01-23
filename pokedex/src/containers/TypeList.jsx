@@ -47,6 +47,7 @@ const TypeListContainer = () => {
             
             data.results.map((pokemon,index) => listPokemon.push({ name: pokemon.name, url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`+(index+1)+`.png`, id: Number(index+1) }));
             setAllData(listPokemon);
+            setFilterData(listPokemon);
             setLoading(false);
 
         } catch (err) {
@@ -107,7 +108,7 @@ const TypeListContainer = () => {
         <div className="App">
             <main className="App-main">
                 <FilterType handleSubmit={handleSubmit} handleChange={handleChange} value={value} />
-                {filterData.length === 0 ? <List data={allData} /> : <List data={filterData} />}
+                {filterData.length === 0 ? "" : <List data={filterData} />}
             </main>
         </div>
   );

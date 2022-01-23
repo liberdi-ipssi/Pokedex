@@ -38,7 +38,6 @@ const ListContainer = () => {
 
         setValue(value);
         setSearchData(allData.filter(pokemon => pokemon.name.toLowerCase().includes(value.toLowerCase())));
-        console.log(searchData);
         window.history.replaceState(value, "", "/list?search="+value);
         
     };
