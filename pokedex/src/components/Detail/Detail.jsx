@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 
-const Detail = ({ data }) => {
+const Detail = ({ data, onClick }) => {
   return (
     <>
         <h1>Détail Pokémon</h1>
+        <button onClick={onClick}>Favorites</button>
         <h2>
             {typeof data.name === "string" ? data.name : null}
         </h2>

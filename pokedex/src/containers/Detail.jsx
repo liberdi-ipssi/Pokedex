@@ -13,12 +13,15 @@ const DetailContainer = () => {
     const [value, setValue] = useState(slug);
     const [data, setData] = useState([]);
 
+    //const favorites = JSON.parse(localStorage.getItem("favorites"));
+    //if (favorites === null) localStorage.setItem("favorites", []);
+
     const fetchAPI = async () => {
         try {
             const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+value);
             const data = await response.json();
 
-            setData({name: data.name, url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(data.id)+".png", weight: data.weight, height: data.height, moves: data.moves, stats: data.stats, types: data.types});
+            setData({name: data.name, url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+(data.id)+".png", id: data.id, weight: data.weight, height: data.height, moves: data.moves, stats: data.stats, types: data.types});
             
             setLoading(false);
 
@@ -31,6 +34,14 @@ const DetailContainer = () => {
         }
     };
     
+    const onClick = () => {
+        
+        //console.log(favorites);
+        //favorites.push({name : data.name, url: data.url, id: data.id});
+        //localStorage.setItem("favorites", JSON.stringify(favorites));
+        
+    };
+
     useEffect(() => {
         fetchAPI();
     }, []);
@@ -41,7 +52,7 @@ const DetailContainer = () => {
     return (
         <div className="App">
             <main className="App-main">
-                <Detail data={data} />
+                <Detail data={data} onClick={onClick} />
             </main>
         </div>
   );

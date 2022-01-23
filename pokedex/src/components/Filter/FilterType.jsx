@@ -1,27 +1,39 @@
 import Select from "react-select";
 
+const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      border: 'none',
+    }),
+};
+
 const options = [
     {value:"normal", label: "Normal"},
+    {value:"fighting", label: "Fighting"},
+    {value:"flying", label: "Flying"},
+    {value:"poison", label: "Poison"},
+    {value:"ground", label: "Ground"},
+    {value:"rock", label: "Rock"},
+    {value:"bug", label: "Bug"},
+    {value:"ghost", label: "Ghost"},
+    {value:"steel", label: "Steel"},
     {value:"fire", label: "Fire"},
     {value:"water", label: "Water"},
     {value:"grass", label: "Grass"},
     {value:"electric", label: "Electric"},
-    {value:"ice", label: "Ice"},
-    {value:"fighting", label: "Fighting"},
-    {value:"poison", label: "Poison"},
-    {value:"ground", label: "Ground"},
     {value:"psychic", label: "Psychic"},
-    {value:"bug", label: "Bug"},
-    {value:"rock", label: "Rock"},
-    {value:"ghost", label: "Ghost"},
-    {value:"dark", label: "Dark"},
     {value:"dragon", label: "Dragon"},
-    {value:"steel", label: "Steel"},
+    {value:"dark", label: "Dark"},
     {value:"fairy", label: "Fairy"},
+    {value:"unknown", label: "Unknown"},
+    {value:"shadow", label: "Shadow"},
 ]
 
-const FilterType = ({handleChange, value}) => (
-    <Select options={options} onChange={handleChange} value={value} />
+const FilterType = ({handleSubmit, handleChange, value}) => (
+    <form onSubmit={handleSubmit}>
+        <Select styles={customStyles} options={options} onChange={handleChange} value={value} />
+        <input type="submit" value="Envoyer" />
+    </form>
   );
   
   export default FilterType;

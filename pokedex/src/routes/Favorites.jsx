@@ -1,5 +1,11 @@
 import "styles/Main.css";
 
-const Favorites = () => <h1>Favoris</h1>;
+import FavoritesContainer from "containers/Favorites";
+
+const Favorites = () => (
+  <>
+    <FavoritesContainer />
+  </>
+);
 
 export default Favorites;
