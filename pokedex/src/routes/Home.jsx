@@ -1,5 +1,11 @@
 import "styles/Main.css";
 
-const Home = () => <h1>Mon app</h1>;
+import HomeContainer from "containers/Home";
+
+const Home = () => (
+  <>
+    <HomeContainer />
+  </>
+);
 
 export default Home;

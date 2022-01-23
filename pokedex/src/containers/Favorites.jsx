@@ -9,6 +9,9 @@ const FavoritesContainer = () => {
 
     const [searchData, setSearchData] = useState(JSON.parse(fav));
 
+    console.log(searchData);
+
+
     return (
         <div className="App">
             <main className="App-main">

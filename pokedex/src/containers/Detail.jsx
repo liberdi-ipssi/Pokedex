@@ -34,7 +34,7 @@ const DetailContainer = () => {
     const onClick = (ev) => {
         ev.preventDefault();
 
-        if (localStorage.getItem("fav").length !== 0) {
+        if (localStorage.getItem("fav") !== null) {
             const dataFav = JSON.parse(localStorage.getItem("fav"));
 
             if (dataFav.filter((pokemon) => pokemon.name == data.name).length !== 0) {

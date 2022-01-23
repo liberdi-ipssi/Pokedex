@@ -12,19 +12,23 @@ import Favorites from "routes/Favorites";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 
+import { ModalProvider } from "contexts/Modal";
+
 ReactDOM.render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="list">
-          <Route index element={<List />} />
-          <Route path=":slug" element={<Detail />} />
+    <ModalProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="list">
+            <Route index element={<List />} />
+            <Route path=":slug" element={<Detail />} />
+          </Route>
+          <Route path="typelist" element={<TypeList />} />
+          <Route path="favorites" element={<Favorites />} />
         </Route>
-        <Route path="typelist" element={<TypeList />} />
-        <Route path="favorites" element={<Favorites />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </ModalProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
